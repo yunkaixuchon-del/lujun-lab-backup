@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>科研内容</h1>
+    <p class="lead">围绕新能源电池的核心科学问题，开展系统性、前沿性研究</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ .Content }}
+
+    {{ $directions := .Site.Data.research }}
+    {{ if $directions }}
+    {{ range $directions }}
+    <div class="card" style="margin-bottom:32px;">
+      <div style="display:grid;grid-template-columns:{{ if .image }}280px{{ else }}0{{ end }} 1fr;gap:0;overflow:hidden;">
+        {{ if .image }}
+        <div style="background:var(--bg-section);overflow:hidden;">
+          <img src="{{ .image | relURL }}" alt="{{ .title }}" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        {{ end }}
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:1.25rem;">{{ .title }}</h3>
+          <p style="color:var(--text-muted);margin:8px 0 16px;font-size:.9rem;">{{ .description }}</p>
+          {{ with .highlights }}
+          <ul style="padding-left:20px;">
+            {{ range . }}
+            <li style="margin-bottom:4px;font-size:.9rem;">{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    {{ else }}
+    <!-- Default research directions -->
+    <div class="card" style="margin-bottom:32px;">
+      <div class="card-body">
+        <h3 class="card-title" style="font-size:1.25rem;">01 | 动力电池正极材料</h3>
+        <p style="color:var(--text-muted);margin:8px 0 16px;">研究高镍三元材料、磷酸铁锂、富锂锰基等正极材料的结构设计与性能优化，通过掺杂、包覆、形貌控制等策略提升材料的循环稳定性与倍率性能。</p>
+        <ul style="padding-left:20px;">
+          <li style="margin-bottom:4px;font-size:.9rem;">高镍三元（NMC、NCA）正极材料的结构稳定性调控</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">表面包覆与体相掺杂协同改性</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">原位表征技术揭示充放电机理</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:32px;">
+      <div class="card-body">
+        <h3 class="card-title" style="font-size:1.25rem;">02 | 固态电解质与固固界面</h3>
+        <p style="color:var(--text-muted);margin:8px 0 16px;">开发新型固态电解质材料，深入研究固固界面的形成机制与离子传输行为，为全固态电池的实用化提供理论支撑。</p>
+        <ul style="padding-left:20px;">
+          <li style="margin-bottom:4px;font-size:.9rem;">氧化物、硫化物固态电解质的合成与优化</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">固固界面阻抗的形成机制与调控</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">全固态电池的组装与性能评估</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:32px;">
+      <div class="card-body">
+        <h3 class="card-title" style="font-size:1.25rem;">03 | 大规模储能材料</h3>
+        <p style="color:var(--text-muted);margin:8px 0 16px;">面向电网储能应用需求，研究水系储能电池、液流电池等新型储能体系的关键材料与电化学机理。</p>
+        <ul style="padding-left:20px;">
+          <li style="margin-bottom:4px;font-size:.9rem;">水系锌离子电池正极材料设计</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">有机电极材料的储能机制</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">液流电池电解液与电极材料优化</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:32px;">
+      <div class="card-body">
+        <h3 class="card-title" style="font-size:1.25rem;">04 | 先进表征技术</h3>
+        <p style="color:var(--text-muted);margin:8px 0 16px;">利用同步辐射X射线、中子散射、电子显微学等先进表征手段，从原子/分子尺度揭示材料结构-性能关系。</p>
+        <ul style="padding-left:20px;">
+          <li style="margin-bottom:4px;font-size:.9rem;">同步辐射原位XRD/XAS表征</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">冷冻电镜（Cryo-TEM）研究界面结构</li>
+          <li style="margin-bottom:4px;font-size:.9rem;">多尺度多模态联合表征方法开发</li>
+        </ul>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

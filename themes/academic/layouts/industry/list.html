@@ -1,0 +1,132 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>横向产业化进展</h1>
+    <p class="lead">推动科研成果转化，服务新能源产业高质量发展</p>
+  </div>
+</div>
+
+<!-- Stats -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4">
+      <div class="stat-card card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">合作企业</div>
+      </div>
+      <div class="stat-card card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">已转化成果</div>
+      </div>
+      <div class="stat-card card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">发明专利</div>
+      </div>
+      <div class="stat-card card">
+        <div class="stat-number">亿元+</div>
+        <div class="stat-label">横向合同金额</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid grid-2">
+      <div>
+        <h2 style="margin-bottom:24px;">产学研合作历程</h2>
+        {{ .Content }}
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2024年</div>
+            <div class="timeline-title">与宁德时代签署战略合作协议</div>
+            <div class="timeline-body">在高镍正极材料改性技术方面达成深度合作，共同开发下一代动力电池材料。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2023年</div>
+            <div class="timeline-title">衢州动力电池和储能研究院揭牌</div>
+            <div class="timeline-body">联合地方政府与龙头企业共建研究院，打通基础研究到产业应用的全链条。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022年</div>
+            <div class="timeline-title">固态电解质制备技术成功中试</div>
+            <div class="timeline-body">与某新能源企业合作，将实验室技术放大至百公斤级，产品性能达到预期目标。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2021年</div>
+            <div class="timeline-title">正极材料表面改性技术转让</div>
+            <div class="timeline-body">将高镍三元正极表面包覆专利技术转让给合作企业，已实现批量生产。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2020年</div>
+            <div class="timeline-title">获批国家重点研发计划产学研联合项目</div>
+            <div class="timeline-body">联合5家企业共同承担国家重点研发计划，开展动力电池全链条研究。</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 style="margin-bottom:24px;">主要合作方向</h2>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-body">
+            <h3 class="card-title">🔋 动力电池材料产业化</h3>
+            <p class="card-text">将实验室开发的高性能正负极材料推向产业化应用，与多家动力电池企业保持长期合作关系。</p>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-body">
+            <h3 class="card-title">⚡ 储能系统解决方案</h3>
+            <p class="card-text">为电网调峰、工商业储能等场景提供定制化材料解决方案，助力储能产业降本增效。</p>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-body">
+            <h3 class="card-title">🏭 技术咨询与评估</h3>
+            <p class="card-text">为新能源企业提供材料技术咨询、产品检测评价及研发方向规划等专业服务。</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">🤝 联合攻关</h3>
+            <p class="card-text">与企业共同设立联合实验室，围绕企业技术需求开展定向基础研究与技术开发。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>合作伙伴</h2>
+      <p>与国内外知名企业建立长期稳定的合作关系</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+      {{ range (.Site.Data.partners | default (slice
+        (dict "name" "宁德时代" "type" "战略合作")
+        (dict "name" "比亚迪" "type" "技术合作")
+        (dict "name" "亿纬锂能" "type" "联合研发")
+        (dict "name" "国轩高科" "type" "技术服务")
+        (dict "name" "蜂巢能源" "type" "联合实验室")
+        (dict "name" "中科海钠" "type" "技术合作")
+      )) }}
+      <div style="background:var(--bg-section);border-radius:8px;padding:16px 24px;text-align:center;min-width:160px;">
+        <div style="font-weight:700;color:var(--zju-blue);">{{ .name }}</div>
+        <div style="font-size:.8rem;color:var(--text-muted);margin-top:4px;">{{ .type }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-alt">
+  <div class="container" style="text-align:center;max-width:700px;">
+    <h2 style="margin-bottom:16px;">寻求合作</h2>
+    <p style="color:var(--text-muted);margin-bottom:24px;">我们热诚欢迎企业与课题组开展多种形式的产学研合作，共同推动新能源技术进步。</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary">联系洽谈</a>
+  </div>
+</section>
+{{ end }}

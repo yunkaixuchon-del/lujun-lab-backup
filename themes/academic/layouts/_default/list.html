@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    {{ .Content }}
+    {{ if .Pages }}
+    <div class="grid grid-3">
+      {{ range .Pages }}
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p class="card-text">{{ .Summary }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

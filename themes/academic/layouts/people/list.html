@@ -1,0 +1,235 @@
+{{ define "main" }}
+
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>课题组成员</h1>
+    <p class="lead">一支充满活力、勇于探索的高水平研究团队</p>
+  </div>
+</div>
+
+{{ $people := .Site.Data.people }}
+
+<section class="section">
+  <div class="container">
+
+    <!-- 团队总览 Banner -->
+    <div class="glass-card" style="background:linear-gradient(135deg,rgba(0,48,135,0.06),rgba(0,180,216,0.06));border:1px solid rgba(0,180,216,0.15);border-radius:var(--radius-lg);padding:36px;margin-bottom:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;" class="reveal">
+      <div>
+        <div style="font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--electric),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10</div>
+        <div style="font-size:0.88rem;color:var(--text-muted);margin-top:4px;">浙大教职人员</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--electric),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">9</div>
+        <div style="font-size:0.88rem;color:var(--text-muted);margin-top:4px;">博士后</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--electric),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">36</div>
+        <div style="font-size:0.88rem;color:var(--text-muted);margin-top:4px;">硕博士生</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--electric),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100+</div>
+        <div style="font-size:0.88rem;color:var(--text-muted);margin-top:4px;">衢州研究院人员</div>
+      </div>
+    </div>
+
+    <!-- 导师 -->
+    <div class="people-group">
+      <h3 class="people-group-title">
+        导师
+        <span class="group-count">{{ len (where $people "group" "导师") }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range where $people "group" "导师" }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}
+                <img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}
+                <div class="placeholder">{{ substr .name 0 1 }}</div>
+                {{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">{{ .role }}</div>
+            {{ with .research }}<div class="person-research">{{ . }}</div>{{ end }}
+            {{ with .email }}<div style="margin-top:10px;"><a href="mailto:{{ . }}" style="font-size:.8rem;color:var(--electric);">{{ . }}</a></div>{{ end }}
+          </div>
+        </div>
+        {{ else }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo"><div class="placeholder">陆</div></div>
+            </div>
+            <div class="person-name">陆俊</div>
+            <div class="person-role">浙大求是讲席教授</div>
+            <div class="person-research">动力电池与储能材料</div>
+            <div style="margin-top:10px;"><a href="mailto:junzoelu@zju.edu.cn" style="font-size:.8rem;color:var(--electric);">junzoelu@zju.edu.cn</a></div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- 研究员 -->
+    {{ $researchers := where $people "group" "研究员" }}
+    {{ if $researchers }}
+    <div class="people-group">
+      <h3 class="people-group-title">
+        研究员 / 青年研究员
+        <span class="group-count">{{ len $researchers }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range $researchers }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}<img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}<div class="placeholder">{{ substr .name 0 1 }}</div>{{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">{{ .role }}</div>
+            {{ with .research }}<div class="person-research">{{ . }}</div>{{ end }}
+            {{ with .email }}<div style="margin-top:10px;"><a href="mailto:{{ . }}" style="font-size:.8rem;color:var(--electric);">{{ . }}</a></div>{{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- 博士后 -->
+    <div class="people-group">
+      <h3 class="people-group-title">
+        博士后
+        <span class="group-count">{{ len (where $people "group" "博士后") }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range where $people "group" "博士后" }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}<img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}<div class="placeholder">{{ substr .name 0 1 }}</div>{{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">博士后</div>
+            {{ with .research }}<div class="person-research">{{ . }}</div>{{ end }}
+          </div>
+        </div>
+        {{ else }}
+        <p style="color:var(--text-muted);grid-column:1/-1;">现有 9 位博士后，详情请联系课题组</p>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- 博士生 -->
+    <div class="people-group">
+      <h3 class="people-group-title">
+        博士研究生
+        <span class="group-count">{{ len (where $people "group" "博士生") }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range where $people "group" "博士生" }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}<img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}<div class="placeholder">{{ substr .name 0 1 }}</div>{{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">{{ .grade | default "博士研究生" }}</div>
+            {{ with .research }}<div class="person-research">{{ . }}</div>{{ end }}
+          </div>
+        </div>
+        {{ else }}
+        <p style="color:var(--text-muted);grid-column:1/-1;">（详细名单持续更新中）</p>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- 硕士生 -->
+    <div class="people-group">
+      <h3 class="people-group-title">
+        硕士研究生
+        <span class="group-count">{{ len (where $people "group" "硕士生") }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range where $people "group" "硕士生" }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}<img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}<div class="placeholder">{{ substr .name 0 1 }}</div>{{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">{{ .grade | default "硕士研究生" }}</div>
+            {{ with .research }}<div class="person-research">{{ . }}</div>{{ end }}
+          </div>
+        </div>
+        {{ else }}
+        <p style="color:var(--text-muted);grid-column:1/-1;">（详细名单持续更新中）</p>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- 校友 -->
+    {{ $alumni := where $people "group" "校友" }}
+    {{ if $alumni }}
+    <div class="people-group">
+      <h3 class="people-group-title">
+        已毕业成员 / 校友
+        <span class="group-count">{{ len $alumni }}</span>
+      </h3>
+      <div class="grid grid-4">
+        {{ range $alumni }}
+        <div class="card person-card reveal" style="padding:28px 20px;">
+          <div class="card-body" style="padding:0;">
+            <div class="person-photo-wrap">
+              <div class="person-photo-ring"></div>
+              <div class="person-photo">
+                {{ if .photo }}<img src="{{ .photo | relURL }}" alt="{{ .name }}">
+                {{ else }}<div class="placeholder">{{ substr .name 0 1 }}</div>{{ end }}
+              </div>
+            </div>
+            <div class="person-name">{{ .name }}</div>
+            <div class="person-role">{{ .current_position | default "校友" }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Join Us CTA -->
+    <div style="text-align:center;padding:48px 0 0;">
+      <div class="reveal" style="background:linear-gradient(135deg,rgba(0,180,216,0.06),rgba(6,214,160,0.06));border:1px solid rgba(0,180,216,0.15);border-radius:var(--radius-lg);padding:48px 40px;max-width:640px;margin:0 auto;">
+        <h3 style="margin-bottom:12px;color:var(--zju-blue);">加入我们</h3>
+        <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.7;">
+          课题组常年招募对动力电池与储能研究充满热情的博士后、博士生和硕士生。<br>
+          欢迎发送简历至课题组邮箱。
+        </p>
+        <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary">发送申请邮件</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{ end }}

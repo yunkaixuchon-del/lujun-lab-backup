@@ -1,0 +1,138 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>科研内容</h1>
+    <p class="lead">围绕新能源电池的核心科学问题，开展系统性、前沿性研究</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ .Content }}
+
+    <div class="research-detail-grid">
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/cathode.png" alt="高性能正极材料">
+        </div>
+        <div class="research-detail-body">
+          <h3>01 | 高性能正极材料</h3>
+          <p>研究高镍三元材料（NCM/NCA）、富锂锰基、钴酸锂正极材料的结构设计与性能优化，通过掺杂、包覆、形貌控制等策略提升材料的循环稳定性与倍率性能。</p>
+          <ul>
+            <li>高镍三元（NMC811、NCA）正极材料的结构稳定性调控</li>
+            <li>表面包覆与体相掺杂协同改性策略</li>
+            <li>原位表征技术揭示充放电机理</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/li-sulfur.png" alt="锂金属/锂硫电池">
+        </div>
+        <div class="research-detail-body">
+          <h3>02 | 锂金属 / 锂硫电池</h3>
+          <p>深入研究锂金属负极的界面调控机制，攻克锂枝晶、体积膨胀等关键难题；开发高硫载量正极与多硫化物抑制策略，推进锂硫电池实用化进程。</p>
+          <ul>
+            <li>锂金属负极人工 SEI 构筑与调控</li>
+            <li>硫正极多孔载体设计与多硫抑制</li>
+            <li>锂硫全电池体系集成优化</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/solid-state.png" alt="固态/半固态电池">
+        </div>
+        <div class="research-detail-body">
+          <h3>03 | 固态 / 半固态电池</h3>
+          <p>开发氧化物、硫化物等新型固态电解质材料，深入研究固固界面的形成机制与离子传输行为，构建兼具高能量密度与安全性的全固态电池体系。</p>
+          <ul>
+            <li>LLZO、LGPS 等固态电解质合成与优化</li>
+            <li>固固界面阻抗形成机制与调控</li>
+            <li>全固态/半固态电池组装与性能评估</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/zinc-battery.png" alt="水系锌电池">
+        </div>
+        <div class="research-detail-body">
+          <h3>04 | 水系锌电池</h3>
+          <p>面向大规模储能应用，研究低成本水系锌离子电池正负极材料设计与电解液工程，揭示锌离子嵌入/脱出机理，攻克锌枝晶与析氢副反应难题。</p>
+          <ul>
+            <li>MnO₂、V₂O₅ 系正极材料结构设计</li>
+            <li>锌负极界面调控与枝晶抑制</li>
+            <li>功能性电解液添加剂开发</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/characterization.png" alt="先进表征技术">
+        </div>
+        <div class="research-detail-body">
+          <h3>05 | 先进原位表征技术</h3>
+          <p>依托同步辐射 X 射线、中子散射、电子显微学等尖端表征平台，从原子/分子尺度揭示电池材料在充放电过程中的动态结构演化规律。</p>
+          <ul>
+            <li>同步辐射原位 XRD/XAS 及 BCDI 三维重构</li>
+            <li>冷冻电镜（Cryo-TEM）界面结构研究</li>
+            <li>原位 TEM/SEM 实时动态成像</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/electrolyte.png" alt="电解液与粘结剂">
+        </div>
+        <div class="research-detail-body">
+          <h3>06 | 电解液与粘结剂</h3>
+          <p>设计新型功能电解液体系，调控 SEI/CEI 界面化学；开发高性能硅基负极粘结剂，有效缓解体积膨胀，提升电极整体服役寿命。</p>
+          <ul>
+            <li>高压电解液体系分子设计</li>
+            <li>局部高浓度电解液（LHCE）开发</li>
+            <li>硅基负极水系粘结剂与导电网络构筑</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/sodium-battery.png" alt="钠离子电池">
+        </div>
+        <div class="research-detail-body">
+          <h3>07 | 钠离子电池</h3>
+          <p>开展低成本钠离子电池正负极材料研究，阐明 Na⁺ 嵌入/脱出反应机理，推动钠离子电池在规模储能领域的产业化应用。</p>
+          <ul>
+            <li>层状氧化物与普鲁士蓝正极材料优化</li>
+            <li>硬碳负极微结构调控与储钠机制</li>
+            <li>钠离子全电池体系集成与验证</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="research-detail-card reveal">
+        <div class="research-detail-img">
+          <img src="/images/research/anode.png" alt="负极材料与电池回收">
+        </div>
+        <div class="research-detail-body">
+          <h3>08 | 负极材料与电池回收</h3>
+          <p>开发硅基、硬碳等高容量负极材料，研究体积膨胀调控与界面稳定化策略；同步推进退役动力电池的高效回收再利用技术研究。</p>
+          <ul>
+            <li>硅碳复合负极结构设计与应力调控</li>
+            <li>硬碳微观结构与储锂容量关系研究</li>
+            <li>退役电池选择性浸出与材料再生</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

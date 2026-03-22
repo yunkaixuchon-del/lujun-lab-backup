@@ -1,0 +1,87 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>课题组简介</h1>
+    <p class="lead">浙江大学材料科学与工程学院 · 陆俊教授团队</p>
+  </div>
+</div>
+
+<!-- PI Introduction -->
+<section class="section">
+  <div class="container">
+    <div class="about-pi">
+      <div class="about-pi-photo">
+        {{ if fileExists "static/images/pi-photo.jpg" }}
+        <img src="{{ "/images/pi-photo.jpg" | relURL }}" alt="陆俊教授">
+        {{ else }}
+        <div style="background:linear-gradient(135deg,#e8eef8,#c5d3e8);padding:40px;text-align:center;min-height:280px;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:5rem;opacity:.4;">👨‍🏫</div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="about-pi-info">
+        <h2>陆俊 教授</h2>
+        <p class="title">浙江大学材料科学与工程学院 · 教授 / 博士生导师</p>
+        <p style="margin-bottom:20px;">{{ .Params.pi_intro | default "陆俊教授长期从事动力电池与储能材料领域的基础研究和应用开发工作，在高性能电池材料设计、界面化学调控、先进表征技术等方面取得了系列重要成果，在国际顶级期刊发表学术论文多篇，主持国家级科研项目多项。" }}</p>
+
+        <h4 style="margin-bottom:12px;">研究方向</h4>
+        <ul class="research-directions">
+          <li>动力电池正极/负极材料设计与合成</li>
+          <li>固态电解质与固液界面化学</li>
+          <li>先进原位/非原位表征技术</li>
+          <li>大规模储能系统关键材料</li>
+          <li>电池失效机制与循环稳定性</li>
+        </ul>
+
+        <div style="margin-top:20px;">
+          <h4 style="margin-bottom:12px;">联系方式</h4>
+          <ul class="about-contact">
+            <li><i>📧</i> <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+            <li><i>📍</i> {{ .Site.Params.address }}</li>
+            <li><i>🏛️</i> {{ .Site.Params.university }} · {{ .Site.Params.department }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lab Overview -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title">
+      <h2>实验室概况</h2>
+    </div>
+    {{ .Content }}
+    <div class="grid grid-3" style="margin-top:32px;">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">🎯 研究使命</h3>
+          <p class="card-text">致力于解决新能源电池领域的基础科学问题，为双碳目标贡献浙大力量。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">🤝 产学研合作</h3>
+          <p class="card-text">积极推动科研成果转化，与国内外知名企业开展深度产学研合作。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">🌱 人才培养</h3>
+          <p class="card-text">每年招收博士生、硕士生若干名，欢迎有志于新能源领域的同学加入。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Us -->
+<section class="section">
+  <div class="container" style="text-align:center;max-width:700px;">
+    <h2 style="margin-bottom:16px;">欢迎加入我们</h2>
+    <p style="color:var(--text-muted);margin-bottom:28px;">课题组长期招收对动力电池与储能研究有热情的博士生、硕士生和博士后。如有意向，请发送个人简历至课题组邮箱。</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary">发送申请邮件</a>
+  </div>
+</section>
+{{ end }}

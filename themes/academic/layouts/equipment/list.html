@@ -1,0 +1,130 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>高端仪器与表征</h1>
+    <p class="lead">实验室配备先进的材料表征与电化学测试设备，支撑高水平科研工作</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ .Content }}
+
+    {{ $equipment := .Site.Data.equipment }}
+    {{ if $equipment }}
+    <div class="grid grid-3">
+      {{ range $equipment }}
+      <div class="card equipment-card">
+        <div class="card-img">
+          {{ if .image }}
+          <img src="{{ .image | relURL }}" alt="{{ .name }}">
+          {{ else }}
+          <div class="img-placeholder">{{ .icon | default "🔬" }}</div>
+          {{ end }}
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ .name }}</h3>
+          <p class="card-text">{{ .description }}</p>
+          {{ with .specs }}
+          <ul class="equipment-specs">
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <!-- Default equipment list -->
+    <div class="grid grid-3">
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">🔬</div></div>
+        <div class="card-body">
+          <h3 class="card-title">球差校正透射电子显微镜</h3>
+          <p class="card-text">原子分辨率成像与元素分析，揭示材料微观结构</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>JEOL JEM-ARM200F</li>
+            <li><strong>分辨率：</strong>0.078 nm</li>
+            <li><strong>加速电压：</strong>80/200 kV</li>
+            <li><strong>附件：</strong>EDS, EELS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">⚡</div></div>
+        <div class="card-body">
+          <h3 class="card-title">电化学工作站（多通道）</h3>
+          <p class="card-text">全面的电化学测试平台，支持循环伏安、阻抗谱等测试</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>Bio-Logic VMP-300</li>
+            <li><strong>通道数：</strong>16通道</li>
+            <li><strong>EIS频率：</strong>10 μHz ~ 1 MHz</li>
+            <li><strong>电流范围：</strong>±400 mA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">📡</div></div>
+        <div class="card-body">
+          <h3 class="card-title">X射线衍射仪（XRD）</h3>
+          <p class="card-text">材料晶体结构表征，支持原位变温测试</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>Bruker D8 Advance</li>
+            <li><strong>光源：</strong>Cu Kα</li>
+            <li><strong>探测器：</strong>LYNXEYE XE-T</li>
+            <li><strong>温度范围：</strong>RT ~ 900°C</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">🔋</div></div>
+        <div class="card-body">
+          <h3 class="card-title">蓝电电池测试系统</h3>
+          <p class="card-text">大批量电池循环性能测试，精确记录充放电数据</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>武汉蓝电 CT2001A</li>
+            <li><strong>通道数：</strong>128通道</li>
+            <li><strong>电压范围：</strong>0 ~ 5 V</li>
+            <li><strong>电流精度：</strong>±0.05%</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">🔭</div></div>
+        <div class="card-body">
+          <h3 class="card-title">扫描电子显微镜（SEM）</h3>
+          <p class="card-text">材料形貌观察与元素面分布分析</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>Zeiss Merlin SEM</li>
+            <li><strong>分辨率：</strong>0.8 nm @ 15 kV</li>
+            <li><strong>附件：</strong>EDS, EBSD</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card equipment-card">
+        <div class="card-img"><div class="img-placeholder">🌡️</div></div>
+        <div class="card-body">
+          <h3 class="card-title">热重-质谱联用仪（TG-MS）</h3>
+          <p class="card-text">材料热稳定性分析与气体产物检测</p>
+          <ul class="equipment-specs">
+            <li><strong>型号：</strong>Netzsch STA 449 F3</li>
+            <li><strong>温度范围：</strong>RT ~ 1600°C</li>
+            <li><strong>气氛：</strong>Ar, N₂, Air</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container" style="text-align:center;max-width:700px;">
+    <h2 style="margin-bottom:16px;">仪器共享与合作</h2>
+    <p style="color:var(--text-muted);margin-bottom:24px;">课题组的部分仪器设备向校内外合作者开放共享。如需使用相关设备或开展测试合作，欢迎联系我们。</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary">联系我们</a>
+  </div>
+</section>
+{{ end }}

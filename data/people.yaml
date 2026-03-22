@@ -1,0 +1,71 @@
+# 课题组成员数据文件
+
+# 导师
+- name: "陆俊"
+  group: "导师"
+  role: "浙大求是讲席教授 / 博士生导师"
+  photo: ""
+  email: "junzoelu@zju.edu.cn"
+  research: "动力电池与储能材料，国家高层次人才计划"
+
+- name: "吴天品"
+  group: "导师"
+  role: "特聘教授 / 博士生导师"
+  photo: ""
+  email: ""
+  research: "能源材料的创制、表征和调控，国家高层次人才"
+
+# 研究员
+- name: "刘铁峰"
+  group: "研究员"
+  role: "研究员"
+  photo: ""
+  research: "锂金属电池"
+
+- name: "王利光"
+  group: "研究员"
+  role: "国家青年高层次人才"
+  photo: ""
+  research: "高性能正极与先进表征分析"
+
+- name: "李泽珩"
+  group: "研究员"
+  role: "浙大百人计划"
+  photo: ""
+  research: "电解液和粘结剂设计"
+
+- name: "李庄男"
+  group: "研究员"
+  role: "国家青年高层次人才"
+  photo: ""
+  research: "锂硫电池与材料设计"
+
+- name: "郑梦婷"
+  group: "研究员"
+  role: "青年研究员"
+  photo: ""
+  research: "负极/电池回收"
+
+- name: "郑丽君"
+  group: "研究员"
+  role: "青年研究员"
+  photo: ""
+  research: "空气电池"
+
+- name: "武俊秀"
+  group: "研究员"
+  role: "青年研究员"
+  photo: ""
+  research: "固态/硅电池"
+
+- name: "赵明"
+  group: "研究员"
+  role: "青年研究员"
+  photo: ""
+  research: "水系锌电池"
+
+- name: "秦宁"
+  group: "研究员"
+  role: "青年研究员"
+  photo: ""
+  research: "高比能正极材料"

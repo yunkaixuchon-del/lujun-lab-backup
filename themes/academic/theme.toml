@@ -1,0 +1,5 @@
+name = "Academic"
+license = "MIT"
+licenselink = "https://github.com/lujun-lab/lujun-lab/blob/main/LICENSE"
+description = "Academic theme for research group websites"
+min_version = "0.100.0"

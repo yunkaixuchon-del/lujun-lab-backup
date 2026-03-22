@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice">
+  <!-- Subtle top waves -->
+  <path d="M0,35 C240,-15 480,85 780,25 C1080,-35 1280,65 1440,15" stroke="rgba(80,220,210,0.18)" stroke-width="1.5" fill="none"/>
+  <path d="M0,65 C200,15 460,115 740,55 C1020,-5 1240,95 1440,45" stroke="rgba(80,220,210,0.22)" stroke-width="1.5" fill="none"/>
+
+  <!-- Mid waves -->
+  <path d="M0,105 C260,45 500,155 800,90 C1100,25 1320,125 1440,75" stroke="rgba(80,220,210,0.28)" stroke-width="2" fill="none"/>
+  <path d="M0,135 C300,75 540,185 840,118 C1140,51 1340,155 1440,105" stroke="rgba(100,210,230,0.32)" stroke-width="2" fill="none"/>
+  <path d="M0,162 C280,100 520,210 820,142 C1120,74 1330,180 1440,132" stroke="rgba(80,220,210,0.38)" stroke-width="2.5" fill="none"/>
+
+  <!-- Prominent main waves -->
+  <path d="M0,188 C260,124 520,238 820,168 C1120,98 1340,205 1440,158" stroke="rgba(64,210,200,0.45)" stroke-width="2.5" fill="none"/>
+  <path d="M0,215 C240,152 500,265 800,195 C1100,125 1320,232 1440,185" stroke="rgba(80,220,210,0.35)" stroke-width="2" fill="none"/>
+
+  <!-- Bottom waves -->
+  <path d="M0,242 C220,180 480,292 780,222 C1080,152 1300,258 1440,210" stroke="rgba(64,210,200,0.28)" stroke-width="1.8" fill="none"/>
+  <path d="M0,268 C200,208 460,318 760,248 C1060,178 1280,284 1440,236" stroke="rgba(80,220,210,0.20)" stroke-width="1.5" fill="none"/>
+</svg>

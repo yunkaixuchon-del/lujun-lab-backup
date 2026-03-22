@@ -1,0 +1,57 @@
+# 高端仪器与表征设备
+
+- name: "球差校正透射电子显微镜（Cs-TEM）"
+  image: "/images/tem.jpg"
+  icon: "🔬"
+  description: "原子分辨率成像与元素分析，揭示材料微观结构与界面信息"
+  specs:
+    - "型号：JEOL JEM-ARM200F"
+    - "分辨率：0.078 nm（HAADF）"
+    - "加速电压：80 / 200 kV"
+    - "附件：EDS, EELS, 原位加热台"
+
+- name: "扫描电子显微镜（SEM）"
+  image: "/images/sem.jpg"
+  icon: "🔭"
+  description: "高分辨率形貌观察与元素面分布分析，支持电池极片截面分析"
+  specs:
+    - "型号：Zeiss Merlin / FEI Quanta"
+    - "分辨率：0.8 nm @ 15 kV"
+    - "附件：EDS, EBSD, FIB"
+
+- name: "X 射线衍射仪（XRD）"
+  image: "/images/xrd.jpg"
+  icon: "📡"
+  description: "晶体结构表征与相分析，支持原位变温及原位电化学测试"
+  specs:
+    - "型号：Bruker D8 Advance"
+    - "光源：Cu Kα (λ = 1.5406 Å)"
+    - "探测器：LYNXEYE XE-T"
+    - "温度范围：RT ~ 900°C"
+
+- name: "同步辐射光源线站"
+  image: "/images/synchrotron.png"
+  icon: "☀️"
+  description: "高亮度同步辐射 X 射线，支持原位 XRD、XAS、BCDI 及纳米断层扫描"
+  specs:
+    - "合作线站：上海光源（SSRF）、北京同步辐射装置（BSRF）"
+    - "技术：原位 XRD、XANES、EXAFS、BCDI"
+    - "空间分辨率：~10 nm"
+
+- name: "电化学工作站（多通道）"
+  icon: "⚡"
+  description: "全面的电化学测试平台，支持循环伏安、阻抗谱、GITT 等测试"
+  specs:
+    - "型号：Bio-Logic VMP-300"
+    - "通道数：16 通道"
+    - "EIS 频率：10 μHz ~ 1 MHz"
+    - "电流范围：±400 mA"
+
+- name: "蓝电电池测试系统"
+  icon: "🔋"
+  description: "大批量电池循环性能测试，精确记录充放电数据"
+  specs:
+    - "型号：武汉蓝电 CT2001A"
+    - "通道数：128 通道"
+    - "电压范围：0 ~ 5 V"
+    - "电流精度：±0.05%"

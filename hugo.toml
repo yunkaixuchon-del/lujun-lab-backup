@@ -1,0 +1,56 @@
+baseURL = "https://lujun-lab.github.io/"
+languageCode = "zh-CN"
+title = "陆俊课题组 | 浙江大学"
+theme = "academic"
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+enableRobotsTXT = true
+paginate = 10
+
+[params]
+  description = "浙江大学陆俊课题组官方网站"
+  keywords = ["浙江大学", "陆俊", "课题组", "动力电池", "储能"]
+  labName = "陆俊课题组"
+  university = "浙江大学"
+  department = "化学工程与生物工程学院"
+  pi = "陆俊 教授"
+  email = "junzoelu@zju.edu.cn"
+  address = "浙江省杭州市西湖区浙大路38号，浙江大学紫金港校区"
+  phone = ""
+
+[menu]
+  [[menu.main]]
+    name = "课题组简介"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "课题组成员"
+    url = "/people/"
+    weight = 2
+  [[menu.main]]
+    name = "研究方向"
+    url = "/research/"
+    weight = 3
+  [[menu.main]]
+    name = "发表论文"
+    url = "/publications/"
+    weight = 4
+  [[menu.main]]
+    name = "大型仪器设备"
+    url = "/equipment/"
+    weight = 5
+  [[menu.main]]
+    name = "产业化合作"
+    url = "/industry/"
+    weight = 6
+  [[menu.main]]
+    name = "衢州动力电池研究院"
+    url = "/qz-institute/"
+    weight = 7
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"

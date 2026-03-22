@@ -1,0 +1,112 @@
+{{ define "main" }}
+<div class="page-header"><div class="page-header-skyline"></div>
+  <div class="container">
+    <h1>发表文章</h1>
+    <p class="lead">课题组在国内外权威期刊发表的学术论文</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filters -->
+    <div class="pub-filters">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="journal">期刊论文</button>
+      <button class="filter-btn" data-filter="review">综述文章</button>
+      <button class="filter-btn" data-filter="2024">2024</button>
+      <button class="filter-btn" data-filter="2023">2023</button>
+      <button class="filter-btn" data-filter="2022">2022</button>
+      <button class="filter-btn" data-filter="2021">2021</button>
+    </div>
+
+    {{ $pubs := .Site.Data.publications }}
+    {{ if $pubs }}
+    {{ range $pubs }}
+    <div class="pub-item" data-type="{{ .type | default "journal" }}" data-year="{{ .year }}">
+      <div class="pub-title">{{ .title }}</div>
+      <div class="pub-authors">{{ .authors }}</div>
+      <div class="pub-venue">{{ .venue }}{{ with .volume }}, <strong>{{ . }}</strong>{{ end }}{{ with .pages }}, {{ . }}{{ end }} ({{ .year }})</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">{{ .year }}</span>
+        {{ with .type }}<span class="pub-tag">{{ . }}</span>{{ end }}
+        {{ with .impact_factor }}<span class="pub-tag">IF: {{ . }}</span>{{ end }}
+      </div>
+      <div class="pub-links">
+        {{ with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" class="pub-link">DOI</a>{{ end }}
+        {{ with .pdf }}<a href="{{ . }}" target="_blank" rel="noopener" class="pub-link">PDF</a>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ else }}
+    <!-- Sample publications -->
+    <div class="pub-item" data-type="journal" data-year="2024">
+      <div class="pub-title">High-Performance Cathode Materials for Lithium-Ion Batteries: A Comprehensive Study</div>
+      <div class="pub-authors">Zhang San, Li Si, Wang Wu, <strong>Lu Jun</strong>*</div>
+      <div class="pub-venue"><em>Nature Energy</em>, <strong>9</strong>, 123-135 (2024)</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">2024</span>
+        <span class="pub-tag">期刊论文</span>
+        <span class="pub-tag">IF: 60.9</span>
+      </div>
+      <div class="pub-links">
+        <a href="#" class="pub-link">DOI</a>
+        <a href="#" class="pub-link">PDF</a>
+      </div>
+    </div>
+    <div class="pub-item" data-type="journal" data-year="2024">
+      <div class="pub-title">Interface Engineering in All-Solid-State Lithium Batteries</div>
+      <div class="pub-authors">Chen Liu, Zhao Ba, <strong>Lu Jun</strong>*</div>
+      <div class="pub-venue"><em>Journal of the American Chemical Society</em>, <strong>146</strong>, 8901-8912 (2024)</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">2024</span>
+        <span class="pub-tag">期刊论文</span>
+        <span class="pub-tag">IF: 15.0</span>
+      </div>
+      <div class="pub-links">
+        <a href="#" class="pub-link">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item" data-type="review" data-year="2023">
+      <div class="pub-title">Advances in Electrode Materials for Large-Scale Energy Storage: Progress and Challenges</div>
+      <div class="pub-authors"><strong>Lu Jun</strong>*, Wang Wu, Li Si</div>
+      <div class="pub-venue"><em>Chemical Reviews</em>, <strong>123</strong>, 5678-5720 (2023)</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">2023</span>
+        <span class="pub-tag">综述文章</span>
+        <span class="pub-tag">IF: 51.4</span>
+      </div>
+      <div class="pub-links">
+        <a href="#" class="pub-link">DOI</a>
+        <a href="#" class="pub-link">PDF</a>
+      </div>
+    </div>
+    <div class="pub-item" data-type="journal" data-year="2023">
+      <div class="pub-title">Stabilizing High-Nickel Layered Cathodes via Surface Reconstruction</div>
+      <div class="pub-authors">Sun Qi, Zhou Ge, <strong>Lu Jun</strong>*</div>
+      <div class="pub-venue"><em>Advanced Materials</em>, <strong>35</strong>, 2302456 (2023)</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">2023</span>
+        <span class="pub-tag">期刊论文</span>
+        <span class="pub-tag">IF: 29.4</span>
+      </div>
+      <div class="pub-links">
+        <a href="#" class="pub-link">DOI</a>
+      </div>
+    </div>
+    <div class="pub-item" data-type="journal" data-year="2022">
+      <div class="pub-title">Operando Characterization of Li-Ion Batteries Using Synchrotron X-ray Techniques</div>
+      <div class="pub-authors">Wu Jiu, Zheng Shi, <strong>Lu Jun</strong>*</div>
+      <div class="pub-venue"><em>ACS Nano</em>, <strong>16</strong>, 12345-12360 (2022)</div>
+      <div class="pub-meta">
+        <span class="pub-tag year">2022</span>
+        <span class="pub-tag">期刊论文</span>
+        <span class="pub-tag">IF: 17.1</span>
+      </div>
+      <div class="pub-links">
+        <a href="#" class="pub-link">DOI</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
