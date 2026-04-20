@@ -1,4 +1,47 @@
 {{ define "main" }}
+<style>
+  /* Stat cards - new style */
+  .ind-stats-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .ind-stat-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 36px 32px;
+    border-left: 4px solid #00328a;
+    box-shadow: 0 2px 16px rgba(25,27,34,0.06);
+    transition: box-shadow 0.2s;
+  }
+  .ind-stat-card:hover { box-shadow: 0 6px 28px rgba(25,27,34,0.10); }
+  .ind-stat-number {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #00328a;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .ind-stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #434653;
+    margin-bottom: 12px;
+  }
+  .ind-stat-sub {
+    font-size: 0.8rem;
+    color: #737685;
+    line-height: 1.5;
+  }
+  @media (max-width: 900px) {
+    .ind-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .ind-stats-inner { grid-template-columns: 1fr; }
+  }
+</style>
+
 <div class="page-header"><div class="page-header-skyline"></div>
   <div class="container">
     <h1>横向产业化进展</h1>
@@ -9,22 +52,26 @@
 <!-- Stats -->
 <section class="section">
   <div class="container">
-    <div class="grid grid-4">
-      <div class="stat-card card">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">合作企业</div>
+    <div class="ind-stats-inner">
+      <div class="ind-stat-card">
+        <div class="ind-stat-number">10+</div>
+        <div class="ind-stat-label">合作企业</div>
+        <div class="ind-stat-sub">Cooperative Enterprises driving industrial innovation</div>
       </div>
-      <div class="stat-card card">
-        <div class="stat-number">5+</div>
-        <div class="stat-label">已转化成果</div>
+      <div class="ind-stat-card">
+        <div class="ind-stat-number">5+</div>
+        <div class="ind-stat-label">已转化成果</div>
+        <div class="ind-stat-sub">Transformed Achievements into market-ready products</div>
       </div>
-      <div class="stat-card card">
-        <div class="stat-number">20+</div>
-        <div class="stat-label">发明专利</div>
+      <div class="ind-stat-card">
+        <div class="ind-stat-number">20+</div>
+        <div class="ind-stat-label">发明专利</div>
+        <div class="ind-stat-sub">Invention Patents protecting core intellectual property</div>
       </div>
-      <div class="stat-card card">
-        <div class="stat-number">亿元+</div>
-        <div class="stat-label">横向合同金额</div>
+      <div class="ind-stat-card">
+        <div class="ind-stat-number">亿元+</div>
+        <div class="ind-stat-label">横向合同金额</div>
+        <div class="ind-stat-sub">Horizontal Contract Amount in research funding</div>
       </div>
     </div>
   </div>

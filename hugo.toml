@@ -47,6 +47,10 @@ paginate = 10
     name = "衢州动力电池研究院"
     url = "/qz-institute/"
     weight = 7
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 8
 
 [markup]
   [markup.goldmark]
